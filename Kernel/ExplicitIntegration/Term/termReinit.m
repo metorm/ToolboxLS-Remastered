@@ -1,4 +1,4 @@
-function [ ydot, stepBound, schemeData ] = termReinit(t, y, schemeData)
+function [ ydot, stepBound, schemeData ] = termReinit(~, y, schemeData)
 % termReinit: a Godunov solver for the reinitialization HJ PDE.
 %
 % [ ydot, stepBound, schemeData ] = termReinit(t, y, schemeData)
