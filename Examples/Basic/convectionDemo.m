@@ -92,7 +92,8 @@ g = processGrid(g);
 %---------------------------------------------------------------------------
 % Most of the time in constant flow case, we want flow in a 
 %   distinguished direction, so assign first dimension's flow separately.
-constantV = 0 * ones(g.dim);
+constantV = 0 * ones(g.dim, 1); % to define speed, we only need a (dim x 1) vector,
+% not a (dim x dim) array, so it's ones(g.dim, 1) instead of ones(g.dim);
 constantV(1) = 2;
 constantV = num2cell(constantV);
 
@@ -156,7 +157,7 @@ end
 center = [ -0.4; 0.0; 0.0; 0.0 ];
 radius = 0.35;
 data = zeros(size(g.xs{1}));
-for i = 1 : g.dim
+for i = 1 : g.dim % the design of this loop allows the code to work for 1~4 dimension
   data = data + (g.xs{i} - center(i)).^2;
 end
 data = sqrt(data) - radius;

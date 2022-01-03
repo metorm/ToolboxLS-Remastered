@@ -273,7 +273,7 @@ if(g.dim == 2)
   set(hs, 'LineWidth', 2.0);
 
   legend([ hI(1), hF(1), hT(1), hM(1) ], ...
-         {'initial', 'final', 'min over time', 'mask'}, 2);
+         {'initial', 'final', 'min over time', 'mask'}, 'Location', 'NorthWest');
   axis equal
   axis(g.axis);
 else
